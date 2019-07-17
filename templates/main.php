@@ -40,6 +40,43 @@ html body {
 }
 </style>
 
+<script type="text/javascript">
+function getUrlParam(name) {
+    var url = document.referrer;
+    if(url!=null && url.indexOf("?")!=-1){
+        var url_param = url.split("?")[1];
+        var url_param_arr = url_param.split("&");
+        for(var i=0;i<url_param_arr.length;i++){
+            var tempParam = url_param_arr[i];
+            var paramName =  tempParam.split("=")[0];
+            if(paramName==name){
+                return tempParam.split("=")[1]
+            }
+        }
+    }
+    return null;
+}
+
+function validURL(str) {
+  var pattern = new RegExp('^(https?:\\/\\/)?'+ // protocol
+    '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|'+ // domain name
+    '((\\d{1,3}\\.){3}\\d{1,3}))'+ // OR ip (v4) address
+    '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*'+ // port and path
+    '(\\?[;&a-z\\d%_.~+=-]*)?'+ // query string
+    '(\\#[-a-z\\d_]*)?$','i'); // fragment locator
+  return !!pattern.test(str);
+}
+
+window.onload = function(){
+var sa1=getUrlParam("q");
+if (validURL(sa1)){
+   document.getElementById("demo1").value = sa1;
+   document.getElementById("Submit1").click();
+}
+
+}
+</script>
+
 </head>
 
 <body>
@@ -64,14 +101,14 @@ html body {
 	<!-- I wouldn't touch this part -->
 	
 		<form action="index.php" method="post" style="margin-bottom:0;">
-			<input name="url" type="text" style="width:400px;" autocomplete="on" placeholder="www....." />
+			<input name="url" type="text" style="width:400px;" autocomplete="on" placeholder="www.xxxx" />
 			<input type="submit" value="Go" />
 		</form>
 		
 		<script type="text/javascript">
 			document.getElementsByName("url")[0].focus();
 		</script><br>
-		eg: www.youtube.com.......
+		eg: www.xxxx.com.......
 	<!-- [END] -->
 	
 	</div>
