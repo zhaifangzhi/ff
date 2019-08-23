@@ -6,6 +6,7 @@
 
 <meta name="generator" content="php-proxy.com">
 <meta name="version" content="<?=$version;?>">
+<meta name="content-type" content="text/html; charset=utf-8">
 
 <style type="text/css">
 html body {
@@ -109,6 +110,8 @@ if (validURL(sa1)){
 			document.getElementsByName("url")[0].focus();
 		</script><br>
 		eg: www.xxxx.com.......
+		<br>
+		想建立自己专属的反向代理网站? 请发邮件zhaifangyuan2@gmail.com联系
 	<!-- [END] -->
 	
 	</div>
