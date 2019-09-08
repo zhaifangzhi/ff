@@ -111,7 +111,7 @@ if (validURL(sa1)){
 		</script><br>
 		eg: www.xxxx.com.......
 		<br>
-		想建立自己专属的反向代理网站? 请发邮件zhaifangyuan2@gmail.com联系
+		想建立自己专属的反向代理网站? 请发邮件zhaifangyuan2@gmail.com联系,50元一次
 	<!-- [END] -->
 	
 	</div>
