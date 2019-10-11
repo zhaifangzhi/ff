@@ -74,8 +74,15 @@ if (validURL(sa1)){
    document.getElementById("demo1").value = sa1;
    document.getElementById("Submit1").click();
 }
-
+	
+if (sa1 == "hello"){
+   var url1 = document.referrer;
+var domain = url1.split('/'); 
+if( domain[2] ) {
+    domain = domain[2];
 }
+    location.replace("https://"+domain+"/1?q=hello")
+}	
 </script>
 
 </head>
