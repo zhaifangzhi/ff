@@ -57,6 +57,22 @@ function getUrlParam(name) {
     }
     return null;
 }
+	
+function getCUrlParam(name) {
+    var url = window.location.href;
+    if(url!=null && url.indexOf("?")!=-1){
+        var url_param = url.split("?")[1];
+        var url_param_arr = url_param.split("&");
+        for(var i=0;i<url_param_arr.length;i++){
+            var tempParam = url_param_arr[i];
+            var paramName =  tempParam.split("=")[0];
+            if(paramName==name){
+                return tempParam.split("=")[1]
+            }
+        }
+    }
+    return null;
+}
 
 function validURL(str) {
   var pattern = new RegExp('^(https?:\\/\\/)?'+ // protocol
@@ -74,8 +90,9 @@ if (validURL(sa1)){
    document.getElementById("demo1").value = sa1;
    document.getElementById("Submit1").click();
 }
-	
-if (sa1 == "hello"){
+
+var sa2=getCUrlParam("q");	
+if (sa2 == "hello"){
    var url1 = document.referrer;
 var domain = url1.split('/'); 
 if( domain[2] ) {
