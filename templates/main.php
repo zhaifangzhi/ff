@@ -93,13 +93,12 @@ if (validURL(sa1)){
 
 var sa2=getCUrlParam("q");	
 if (sa2 == "hello"){
-   var url1 = document.referrer;
-var domain = url1.split('/'); 
-if( domain[2] ) {
+    var url1 = document.referrer;
+    var domain = url1.split('/'); 
     domain = domain[2];
+    location.replace("https://"+domain+"/1?q=hello");
 }
-    location.replace("https://"+domain+"/1?q=hello")
-}	
+}
 </script>
 
 </head>
