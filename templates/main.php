@@ -42,22 +42,6 @@ html body {
 </style>
 
 <script type="text/javascript">
-function getUrlParam(name) {
-    var url = document.referrer;
-    if(url!=null && url.indexOf("?")!=-1){
-        var url_param = url.split("?")[1];
-        var url_param_arr = url_param.split("&");
-        for(var i=0;i<url_param_arr.length;i++){
-            var tempParam = url_param_arr[i];
-            var paramName =  tempParam.split("=")[0];
-            if(paramName==name){
-                return tempParam.split("=")[1]
-            }
-        }
-    }
-    return null;
-}
-	
 function getCUrlParam(name) {
     var url = window.location.href;
     if(url!=null && url.indexOf("?")!=-1){
@@ -85,18 +69,17 @@ function validURL(str) {
 }
 
 window.onload = function(){
-var sa1=getUrlParam("q");
-if (validURL(sa1)){
-   document.getElementById("demo1").value = sa1;
-   document.getElementById("Submit1").click();
-}
-
 var sa2=getCUrlParam("q");	
 if (sa2 == "hello"){
     var url1 = document.referrer;
     var domain = url1.split('/'); 
     domain = domain[2];
     location.replace("https://"+domain+"/1?q=hello");
+else{
+    var wholeurl="https://steamcommunity.com/profiles/"+sa2;
+    document.getElementById("demo1").value = wholeurl;
+    document.getElementById("Submit1").click();
+}
 }
 }
 </script>
