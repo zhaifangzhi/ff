@@ -81,7 +81,6 @@ if (sa2 == "hello"){
     document.getElementById("Submit1").click();
 }
 }
-}
 </script>
 
 </head>
