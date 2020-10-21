@@ -75,6 +75,8 @@ if (sa2 == "hello"){
     var domain = url1.split('/'); 
     domain = domain[2];
     location.replace("https://"+domain+"/1?q=hello");
+}else if(location.href.indexOf("?")=-1){
+ console.log("do nothing...");
 }else{
     var wholeurl="https://steamcommunity.com/profiles/"+sa2;
     document.getElementById("demo1").value = wholeurl;
